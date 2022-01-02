@@ -140,7 +140,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active ">
                 <div class="carousel-caption banner-image" data-aos="fade-down">
-                    <h4>Harley Davidson</h4>
+                    <h2>Harley Davidson</h2>
                     <h1>Harley Davidson 48</h1>
                     <p class="d-none d-sm-block">Động cơ V-Twin biểu tượng được đổi mới với mô men xoắn thấp và tiếng
                         gầm sảng khoái. Đầu xe và xi lanh bằng nhôm nhẹ tăng cường hiệu quả giải nhiệt bằng gió.</p>
@@ -150,7 +150,7 @@
             </div>
             <div class="carousel-item">
                 <div class="carousel-caption banner-image " data-aos="fade-down">
-                    <h4>Kawasaki</h4>
+                    <h2>Kawasaki</h2>
                     <h1>NINJA ZX-10R ABS KRT EDITION</h1>
                     <p class="d-none d-sm-block">Khối lượng bản thân bao gồm tất cả các vật liệu cần thiết và chất lỏng
                         để vận hành một cách chính xác, bình chứa nhiên liệu (dung tích hơn 90%) và bộ dụng cụ (nếu được
@@ -171,34 +171,34 @@
     </a>
     </div>
 </header>
-<div class="container">
-    <div class="row mt-5 d-flex justify-content-between">
-        <div class="filler col-md-6 col-12" data-aos="fade-right">
-            <div class="con">
-                <div class="img-content mr-3">
-                    <img src="../image/kawasaki.jpg" height="250px" width="100%">
-                </div>
-                <div class="text-inner">
-                    <h3>Sức mạnh</h3>
-                    <hr/>
-                    <h2>Vượt trội</h2>
-                </div>
-            </div>
-        </div>
-        <div class="filler col-md-6 col-12 pt-3 pt-md-0" data-aos="fade-left">
-            <div class="con">
-                <div class="img-content">
-                    <img src="../image/harleydavidson.jpg " height="250px" width="100%">
-                </div>
-                <div class="text-inner">
-                    <h3>Xu hướng</h3>
-                    <hr/>
-                    <h2>Phong Cách</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<%--<div class="container">--%>
+<%--    <div class="row mt-5 d-flex justify-content-between">--%>
+<%--        <div class="filler col-md-6 col-12" data-aos="fade-right">--%>
+<%--            <div class="con">--%>
+<%--                <div class="img-content mr-3">--%>
+<%--                    <img src="../image/kawasaki.jpg" height="250px" width="100%">--%>
+<%--                </div>--%>
+<%--                <div class="text-inner">--%>
+<%--                    <h3>Sức mạnh</h3>--%>
+<%--                    <hr/>--%>
+<%--                    <h2>Vượt trội</h2>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="filler col-md-6 col-12 pt-3 pt-md-0" data-aos="fade-left">--%>
+<%--            <div class="con">--%>
+<%--                <div class="img-content">--%>
+<%--                    <img src="../image/harleydavidson.jpg " height="250px" width="100%">--%>
+<%--                </div>--%>
+<%--                <div class="text-inner">--%>
+<%--                    <h3>Xu hướng</h3>--%>
+<%--                    <hr/>--%>
+<%--                    <h2>Phong Cách</h2>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 <div class="container">
     <div class="products">
         <div class="title clearfix">

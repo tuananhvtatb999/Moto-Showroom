@@ -6,7 +6,6 @@ import com.devpro.entities.User;
 import com.devpro.repositories.RoleRepo;
 import com.devpro.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.SmartLifecycle;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
@@ -42,6 +41,7 @@ public class ConfigData {
         User user = new User("Administrator", bCryptPasswordEncoder.encode("admin"),
                 "admin@admin.com.vn", Arrays.asList(role1));
 
+
         Role roleFind = roleRepo.findByName(Constants.ROLE.ADMIN.toString());
         if (Objects.isNull(roleFind)) {
             roleRepo.save(role1);
@@ -52,7 +52,7 @@ public class ConfigData {
             roleRepo.save(role2);
         }
 
-        User userFind = userRepo.findByusername("admin");
+        User userFind = userRepo.findByusername("Administrator");
         if (Objects.isNull(userFind)) {
             userRepo.save(user);
         }

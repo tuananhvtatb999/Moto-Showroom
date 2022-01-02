@@ -101,7 +101,7 @@
 								<td>${item.tenSanPham }</td>
 								<td><img src="../file/upload/${item.urlImage }"
 									width="100px" height="150px"></td>
-								<td><input style="width: 50px" type="number"
+								<td><input style="width: 50px" type="number" min="1"
 									value="${item.soluong }"
 									onchange="Cart.updateGioHang(${item.maSanPham }, ${item.giaban }, this.value, ${total });">
 								</td>

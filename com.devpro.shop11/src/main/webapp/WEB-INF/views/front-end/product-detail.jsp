@@ -158,7 +158,6 @@ product-detai-imgs img {
 								class="bx bx-star text-warning"></span> <span
 								class="bx bx-star text-warning"></span> <span class="bx bx-star"></span>
 						</div>
-						<p class="text-muted mb-3">( 152 Customers Review )</p>
 						<c:if test="${product.priceSale != null }">
 							<h6 class="text-success text-uppercase">
 								Đang giảm giá : ${product.percentSale}%

@@ -1,3 +1,4 @@
+
 var Product = {
 	deleteProduct: function(idP) {
 		var id = idP;
@@ -12,8 +13,6 @@ var Product = {
 			success: function(jsonResult) { // được gọi khi web-service trả về dữ liệu.
 				if (jsonResult.status == 200) {
 					if (ok) {
-						location.reload();
-						alert(jsonResult.data);
 					}else{
 						return;
 					}
@@ -84,6 +83,30 @@ var Product = {
 				}
 			},
 			error: function(jqXhr, textStatus, errorMessage) { // error callback 
+
+			}
+		});
+	},
+
+	filterProduct: function() {
+		var data = {};
+		data["gia"] = document.getElementById("gia").value;
+		data["dungtich"] = document.getElementById("dungtich").value;
+		$.ajax({
+			url: "/filter",
+			type: "post",
+			contentType: "application/json", // dữ liệu gửi lên web-service có dạng là json.
+			data: JSON.stringify(data), // object json -> string json
+
+			dataType: "json", // dữ liệu từ web-service trả về là json.
+			success: function(jsonResult) { // được gọi khi web-service trả về dữ liệu.
+				if (jsonResult.status == 200) {
+					location.reload();
+				} else {
+					alert('loi');
+				}
+			},
+			error: function(jqXhr, textStatus, errorMessage) { // error callback
 
 			}
 		});

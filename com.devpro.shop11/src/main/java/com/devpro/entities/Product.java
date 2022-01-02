@@ -1,6 +1,8 @@
 package com.devpro.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "tbl_products")
 @Data
@@ -57,10 +60,12 @@ public class Product extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
+	@JsonIgnore
 	private Category category;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "brand_id")
+	@JsonIgnore
 	private Brand brand;
 
 	public Brand getBrand() {
@@ -72,6 +77,7 @@ public class Product extends BaseEntity {
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER, orphanRemoval = true)
+	@JsonIgnore
 	private List<ProductImages> productImages = new ArrayList<ProductImages>();
 
 	public void addProductImages(ProductImages _productImages) {

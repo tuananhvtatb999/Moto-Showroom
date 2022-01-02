@@ -65,8 +65,8 @@ h1{
 }
 .menu ul li{
 	margin-right: 40px;
-	line-height: 60px;
-	font-size: 18px;
+	line-height: 80px;
+	font-size: 25px;
 }
 .menu li.active{
 	font-weight: bold;
@@ -104,6 +104,9 @@ h1{
 }
 .banner-image{
 	transition: 5s;
+}
+.banner-image p {
+	font-size: 22px;
 }
 .banner{
 	z-index: 1;
@@ -387,7 +390,7 @@ a{
 	font-weight: bold;
 }
 .content-about p{
-	font-size: 16px;
+	font-size: 24px;
 }
 .about-service i{
 	font-size: 45px;
@@ -439,9 +442,6 @@ a{
 }
 .title-left a:hover{
 	color: #FFCC33;
-}
-.title-right{
-	float:right;
 }
 .category{
 	margin-bottom: 10px;
