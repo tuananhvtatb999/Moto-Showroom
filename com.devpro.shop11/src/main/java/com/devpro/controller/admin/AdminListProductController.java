@@ -7,11 +7,14 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -91,17 +94,20 @@ public class AdminListProductController extends BaseController{
 	// Hiển thị danh sách sản phẩm
 	@GetMapping("/admin/list-products")
 	public String listProduct(final HttpServletRequest request, final HttpServletResponse respone , final ModelMap model) {
+		HttpSession httpSession = request.getSession();
+		List<Product> products = new ArrayList<>();
+		if (httpSession.getAttribute("products") != null) {
+			products = (List<Product>) httpSession.getAttribute("products");
+		}
+		else {
+			products = productRepo.findAll();
+		}
+		model.addAttribute("products", products);
 		String search = request.getParameter("search");
 		if(search != null) {
-			List<Product> products = new ArrayList<Product>();
-			for (Product product : productRepo.findAll()) {
-				if(product.getTitle().toLowerCase().contains(search.toLowerCase()) || product.getId().toString().toLowerCase().contains(search.toLowerCase())) {
-					products.add(product);
-				}
-			}
+			products.removeIf(product -> !product.getTitle().toLowerCase().contains(search.toLowerCase()));
 			model.addAttribute("products", products);
 		}
-		model.addAttribute("products", productRepo.findAll());
 		model.addAttribute("message", "");
 		String messsage = request.getParameter("message");
 		if(messsage != null && messsage.equalsIgnoreCase("success")) {
@@ -109,6 +115,7 @@ public class AdminListProductController extends BaseController{
 					"  <strong>Success!</strong> Sửa thành công." + 
 					"</div>");
 		}
+		httpSession.removeAttribute("products");
 		return "back-end/list-products";
 	}
 	

@@ -14,6 +14,27 @@
     <title>Danh sách sản phẩm</title>
     <jsp:include page="/WEB-INF/views/back-end/common/css.jsp"></jsp:include>
 </head>
+<style>
+    .xt-ct-menu {
+        position: relative;
+        display: inline-block;
+    }
+
+    .xtlab-ctmenu-item {
+        background-color: #4caf50;
+        font: ;
+        color: white;
+        padding: 3px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+    .xtlab-ctmenu-item:hover, .xtlab-ctmenu-item:focus {
+        background-color: #4CAF50;
+    }
+</style>
 <body data-sidebar="dark">
 
 <!-- Begin page -->
@@ -55,7 +76,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row mb-2">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-2">
                                         <div class="search-box mr-2 mb-2 d-inline-block">
                                             <form method="get"
                                                   action="${pageContext.request.contextPath}/admin/list-products">
@@ -67,8 +88,28 @@
                                             </form>
                                         </div>
                                     </div>
+                                    <div class="xt-ct-menu">
+                                        <select class="xtlab-ctmenu-item" id="gia">
+                                            <option value="" selected disabled hidden>Khoảng giá</option>
+                                            <option value="69">Dưới 70 triệu</option>
+                                            <option value="70">70 triệu - 100 triệu</option>
+                                            <option value="100">100 triệu - 150 triệu</option>
+                                            <option value="150">Trên 150 triệu</option>
+                                        </select>
+                                    </div>
 
+                                    <div class="xt-ct-menu">
+                                        <select class="xtlab-ctmenu-item" id="dungtich">
+                                            <option value="" selected disabled hidden>Dung tích</option>
+                                            <option value="100">100 cc</option>
+                                            <option value="125">125 cc</option>
+                                            <option value="150">150 cc</option>
+                                            <option value="200">200 cc</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" onclick="Product.filterProduct();" class="btn btn-info float-right" style="font-size: 20px; height: 38px; text-align: center">Lọc</button>
                                 </div>
+
 
                                 <div class="table-responsive">
                                     ${message}
